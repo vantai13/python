@@ -9,8 +9,14 @@ import math
 # b = x % 100  
 # print( a, b)
 
-a, b = map(int, input("Input two number: ").split())
-print("a/b", a/b )
-print("float a/b", '%.2f' % float(a)/b)
+# a, b = map(int, input("Input two number: ").split())
+# print("a/b : ", int(a/b) )
+# print("a/b : ", (float)(a/b))
+#
+# print("float a/b", '%.2f' % float(a/b) )
+
+# n = int(input("Input a number: "))
+# result = n // 1000
+# print("The thousands digit is:", result)
 
 
