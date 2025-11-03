@@ -67,7 +67,24 @@ from IPython.terminal.shortcuts.auto_suggest import accept
 # print(res)
 
 # Lát đá quảng trường
-n, m, a = map(int, input("Input n, m, a: ").split())
-res_n = n // a if n % a == 0 else n // a + 1
-res_m = m // a if m % a == 0 else m // a + 1
-print ( "result", res_n * res_m)
+# n, m, a = map(int, input("Input n, m, a: ").split())
+# res_n = n // a if n % a == 0 else n // a + 1
+# res_m = m // a if m % a == 0 else m // a + 1
+# print ( "result", res_n * res_m)
+
+#Frog
+# a, b, k = map(int, input("Input a, b, k: ").split())
+# # X + a , x - b
+# res =  k // 2 * (a - b) if k % 2 == 0 else (k // 2 * (a - b) + a)
+# # print(a, b, k, (k * a - k * b ) // 2,  (k * a - k * b ) // 2 + a)
+# print("Vi tri cua frog: ",res )
+
+n, m = map(int, input("Input n, m: ").split())
+min_step = n / 2 if n % 2 == 0 else n // 2 + 1
+max_step = n
+if m > max_step:
+    res = -1
+else:
+    res = min_step if min_step % m == 0 else int(min_step // m + 1) * m
+
+print("res: ", res)
