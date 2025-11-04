@@ -72,6 +72,63 @@ from math import *
 # res += chai_bia_du
 # print(res)
 
+# n = int(input("Nhap n: "))
+#
+# chai_bia = n // 28
+# res = chai_bia
+# vo_bia = chai_bia
+#
+# while (vo_bia >= 3):
+#     vo_bia_du = vo_bia % 3
+#     chai_bia = vo_bia // 3
+#     res += chai_bia
+#     vo_bia = chai_bia + vo_bia_du
+#
+# print("So luong chai bia toi da la: ", res)
+
+
+# bieu dien duoi dang so nguyen to
+# n = int(input("Input n: "))
+# i = 2
+#
+# dem = 0
+# if n == 1 or n == 0:
+#     print("-1")
+# else:
+#     for i in range (2, int(sqrt(n)) + 1):
+#         if n % i == 0:
+#             while (n % i == 0):
+#                 n -= i
+#                 print(i, end= " ")
+#                 if n < 2:
+#                     break
+#
+#     if n > 2:
+#         print(n)
+
+n = int(input("Nhap n: "))
+count = 0
+if n == 1 or n == 0: 
+    print("-1")
+else :
+    if n % 2 == 0:
+        count = n // 2
+    else:
+        count = n // 2 + 1
+    print(count)
+    for i in range(0, (n // 2)):
+        print("2", end=" ")
+
+    if n % 2 != 0:
+        print("3")
+
+
+
+
+
+
+
+
 
 
 
