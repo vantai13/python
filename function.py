@@ -42,6 +42,31 @@ def gcd(a, b):
         b = tmp
     return a
 
+def so_thuan_nghich(n):
+    if n < 10 : return 1
+    tai = n
+    tmp = 0
+    while(n):
+        last = n % 10
+        n //= 10
+        tmp = tmp * 10 + last
+
+    print(tmp)
+    if tmp == tai :
+
+        return 1
+    return 0
+
+def dem_chu_so(n):
+    dem = 0
+    while (n):
+        dem += 1
+        n /= 10
+    return dem
+
+# def so_hoan_hao(n):
+
+
 
 
 if __name__ == '__main__':
@@ -54,5 +79,36 @@ if __name__ == '__main__':
     # else:
     #     print("no")
 
-    a, b = map(int, input("Nhap a, b: ").split())
-    print(gcd(a, b))
+    # a, b = map(int, input("Nhap a, b: ").split())
+    # print(gcd(a, b))
+
+    n = int(input("Input n: "))
+
+    if so_thuan_nghich(n):
+        print("yes")
+    else:
+        print("no")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
