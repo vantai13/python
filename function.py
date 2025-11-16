@@ -66,7 +66,79 @@ def dem_chu_so(n):
 
 # def so_hoan_hao(n):
 
+# so luong uoc cua n la so nguyen to
+def uoc_nt(n):
+    res = 0
+    for i in range(2, isqrt(n) + 1):
+        if n % i == 0:
+            print(i)
+            res = i
+            while n % i == 0:
+                n /= i
+    if n > 1:
+        res = n
+    return res
 
+# kiem tra xem co phai sphenic hay khong
+def sphenic(n):
+    sum = 0
+    for i in range(2, isqrt(n) + 1):
+        if n % i == 0:
+            sum += 1
+            dem = 0
+            while n % i == 0:
+                n //= i
+                dem += 1
+                if dem > 1:
+                    return 0
+    if n > 1:
+        sum += 1
+
+    if sum == 3:
+        return 1
+
+# phan tich thua so nguyen to in ra 2^2 * 3^2...
+
+def  thua_so_nt(n):
+    for i in range(2, isqrt(n) + 1):
+        if n % i == 0:
+            cnt = 0
+            while n % i == 0:
+                cnt += 1
+                n //= i
+            if n < 2:
+                print(f"{i}^{cnt}")
+            else :
+                print(f"{i}^{cnt} + ", end="")
+
+    if n > 1:
+        print(f"{n}")
+
+# so smith: Khong phai la nguyen to, tong cac chu so = tong chu so thua so nguyen to
+
+def tong_chu_so(n):
+    sum = 0
+    while n:
+        last = n % 10
+        n //= 10
+        sum += last
+    return sum
+
+def smith(n):
+    sum = 0
+    tmp = n
+    sum1 = tong_chu_so(n)
+    for i in range(2, isqrt(n) + 1):
+        if n % i == 0:
+
+            while n % i == 0:
+                n //= i
+                sum += tong_chu_so(i)
+    if tmp == n :
+        return 0
+    if n > 1:
+        sum += tong_chu_so(n)
+    return sum == sum1
 
 
 if __name__ == '__main__':
@@ -82,11 +154,13 @@ if __name__ == '__main__':
     # a, b = map(int, input("Nhap a, b: ").split())
     # print(gcd(a, b))
 
+
+
     n = int(input("Input n: "))
 
-    if so_thuan_nghich(n):
+    if smith(n):
         print("yes")
-    else:
+    else :
         print("no")
 
 
