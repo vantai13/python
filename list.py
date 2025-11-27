@@ -92,25 +92,38 @@ def gcd(a, b):
         b = tmp
     return a
 
+def lien_ke_trai_dau(n, a):
+    if a[0] * a[1] < 0 :
+        print(a[0], end=" ")
 
+    for i in range(1, n - 1):
+        if a[i] * a[i - 1] < 0 or a[i] * a[i + 1] < 0:
+            print(a[i], end=" ")
+    if a[n - 1] * a[n - 1 - 1] < 0:
+        print(a[n - 1])
 
+def min_space(n, a):
+    """
+    co the sort() roi lam
+    :param n:
+    :param a:
+    :return:
+    """
 
-
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     n = int(input("Input n: "))
-    a = list(map(int,input("Nhap day so n:").split()))
-    if n == 1 :
-        print(a[0])
-    elif n == 0:
-        print("Invalid")
-    elif n == 2:
-        res = gcd(a[0], a[1])
-    else:
-        res = gcd(a[0], a[1])
-        for i in range(2,n):
-            res = gcd(res, a[i])
-    print(res)
+    a = list(map(int, input("Input array: ").split()))
+
+    # # Reverse array
+    # for i in range(n // 2):
+    #     if a[i] != a[n - i - 1]:
+    #         print("no")
+    #         exit(0)
+    #
+    # print("yes")
+
+    lien_ke_trai_dau(n, a)
+
 
 
 

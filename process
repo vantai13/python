@@ -2,4 +2,7 @@ kieu du lieu : 18
 vong lap : 25
 function : 39
 de quy: 49
-list : 64
+list : 65
+prefix_sum:
+sang so ngt + mang cong don: 70
+sort : 74
